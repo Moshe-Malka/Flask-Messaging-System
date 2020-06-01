@@ -17,7 +17,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-app = Flask("Herolo_Home-Assignment_Messaging-System")
+app = Flask(__name__)
 
 def json_valid(data):
     try:
@@ -109,5 +109,5 @@ def gel_all_unread_messages_for_receiver(receiver):
 
 if __name__ == '__main__':
     print("Starting...")
-    app.run()
+    app.run(threaded=True, port=5000)
     
