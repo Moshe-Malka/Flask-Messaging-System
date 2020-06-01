@@ -96,11 +96,15 @@ def delete_message_by_id(message_id):
 @app.route('/messages/all/<receiver>', methods=['GET'])
 def get_all_messages_for_receiver(receiver):
     messages = session.query(Message).filter_by(receiver=receiver)
+    for message in messages:
+        message.unread = False
     return jsonify(statusCode=200, messages=[m.serialize for m in messages]), 200
 
 @app.route('/messages/unread/<receiver>', methods=['GET'])
 def gel_all_unread_messages_for_receiver(receiver):
     unread_messages = session.query(Message).filter_by(receiver=receiver, unread=True)
+    for message in unread_messages:
+        message.unread = False
     return jsonify(statusCode=200, messages=[m.serialize for m in unread_messages]), 200
 
 if __name__ == '__main__':

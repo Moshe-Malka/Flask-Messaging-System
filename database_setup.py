@@ -15,7 +15,7 @@ class Message(Base):
     message_id = Column(String(250), primary_key=True, unique=True)
     sender = Column(String(250), nullable=False)
     receiver = Column(String(250), nullable=False)
-    creation_date = Column(TIMESTAMP, nullable=False, default=datetime.utcnow().isoformat())
+    creation_date = Column(TIMESTAMP, nullable=False, default=datetime.utcnow())
     message = Column(String(250))
     subject = Column(String(250))
     unread = Column(Boolean(), default=True)
