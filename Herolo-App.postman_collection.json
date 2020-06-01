@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "a35eb7b6-2f10-48df-ab09-c66f07b15842",
+		"name": "Herolo-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/messages/all/",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"all",
+						""
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Message with specific id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/message/51db0d02-07a4-4696-a1ac-e37fbe085b26",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"51db0d02-07a4-4696-a1ac-e37fbe085b26"
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":\"M-Malka\",\"receiver\":\"Moshe\", \"message\": \"Hello Moshe!\", \"subject\": \"Greetingss From Israel !\"}"
+				},
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/message/new/",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"new",
+						""
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a message by the message id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/message/delete/51db0d02-07a4-4696-a1ac-e37fbe085b26",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"delete",
+						"51db0d02-07a4-4696-a1ac-e37fbe085b26"
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		},
+		{
+			"name": "Gelt All Messages for  a specific reciver",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/messages/all/Moshe",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"all",
+						"Moshe"
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Unread Message for a specific reciver",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://herolo-messaging-app.herokuapp.com/messages/unread/Moshe",
+					"protocol": "https",
+					"host": [
+						"herolo-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"messages",
+						"unread",
+						"Moshe"
+					]
+				},
+				"description": "gets all messages in db (without tagging  them as read)."
+			},
+			"response": []
+		}
+	]
+}
